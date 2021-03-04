@@ -1,3 +1,10 @@
+# Electric Sheep
+## Record, share, analyze, and (eventually) synthesize your dreams
+
+This is a work-in-progress. Come back later for more info!
+
+## Next.js info
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
