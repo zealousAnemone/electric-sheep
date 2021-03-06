@@ -43,6 +43,7 @@ The app will follow this general structure, using Next on frontend and (tentativ
 - Once logged in...
 
   - Record dream page
+  - my acct
   - Your dream diary
   - Search bar
 
@@ -53,7 +54,7 @@ The app will follow this general structure, using Next on frontend and (tentativ
   - User
 
     - id
-    - username
+    - email
     - name
     - birthday
     - location

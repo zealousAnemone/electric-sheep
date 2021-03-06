@@ -1,24 +1,20 @@
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form'; 
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Navbar bg='light' expand='lg'>
       <Navbar.Brand>Electric Sheep</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Add Dream</Nav.Link>
-          <Nav.Link href="#link">Dream Diary</Nav.Link>
+          <Nav.Link><Link href="/add"><a>Add Dream</a></Link></Nav.Link>
+          <Nav.Link><Link href="/diary">Dream Diary</Link></Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
+        {/* conditionally render my acct or login */}
+        <Nav.Link>{props.loggedIn ? <Link href="/account">My Account</Link> : <Link href="/login">Login</Link>}</Nav.Link>
       </Navbar.Collapse> 
       </Navbar>
   )
