@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { Form, Container, Button } from 'react-bootstrap';
-import FormImpl from 'react-bootstrap/esm/Form';
 import Header from '../components/Header';
 
 const Add = () => {

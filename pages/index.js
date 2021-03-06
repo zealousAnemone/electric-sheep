@@ -1,16 +1,13 @@
-import Head from 'next/head';
+import { useContext } from 'react';
 import Header from '../components/Header';
-import styles from '../styles/Home.module.css';
+import UserContext from '../components/UserContext';
 
 export default function Home() {
-  let loggedIn = false; // for testing
+  const { user, setUser } = useContext(UserContext);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Electric Sheep</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header loggedIn={loggedIn} />
+    <div>
+      <Header />
+      <h1>{user}</h1>
     </div>
   );
 }

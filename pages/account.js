@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Header from '../components/Header';
 
 const Account = () => {
@@ -6,6 +5,12 @@ const Account = () => {
     <div>
       <Header />
       <h1>Account</h1>
+      <p>On this page, you will be able to view & change acct info</p>
+      <ul>
+        <li>email address</li>
+        <li>preferences re: tracking</li>
+        <li>Whether acct is publically available</li>
+      </ul>
     </div>
   );
 };
