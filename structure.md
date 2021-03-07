@@ -5,11 +5,11 @@
 ## MVP
 
 - [ ] User can log into a private acct
-  - [ ] username/pw
+  - [ ] E-mail
   - [ ] Name
   - [ ] Birthday
   - [ ] Location
-  - Note: All fields except username optional
+  - Note: All fields except E-mail & name optional
 - [ ] User can record dreams
   - [ ] Content
   - [ ] Date
