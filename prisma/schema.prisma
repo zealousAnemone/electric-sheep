@@ -15,6 +15,7 @@ model dreams {
   weather       String?
   moon_phase    String?
   date          DateTime? @db.Date
+  title         String?
   users         users?    @relation(fields: [user_id], references: [id])
 }
 
