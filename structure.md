@@ -13,7 +13,7 @@
 - [ ] User can record dreams
   - [ ] Content
   - [ ] Date
-  - [ ] Weather, moon phase, menstrual cycle, etc (auto if opted in)
+  - [ ] Weather, moon phase, menstrual cycle, etc (stretch: auto if opted in)
     - [ ] period can be guessed by LMC/length, or manual
 - [ ] User can tag dreams
 - [ ] User can search by tag or weather etc.
@@ -24,6 +24,7 @@
 - [ ] User can make acct publically searchable
 - [ ] User can see dreams nearby
 - [ ] User can search public dreams by tag, weather, time period, astrological sign, location, etc.
+- [ ] Switch from Bootstrap to Tailwind
 
 ## Super Stretch
 
