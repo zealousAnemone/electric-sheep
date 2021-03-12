@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import UserContext from '../components/UserContext';
 
 const Login = () => {
-  const { user, setUser } = useContext(UserContext);
   return (
     <div>
       <Header />
