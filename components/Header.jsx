@@ -17,7 +17,7 @@ const Header = () => {
           <Nav.Link><Link href="/diary"><a>Dream Diary</a></Link></Nav.Link></> : <><Nav.Link><Link href="/about"><a>About</a></Link></Nav.Link><Nav.Link><Link href="/signup"><a>Sign up</a></Link></Nav.Link>  </>}
         </Nav>
         {/* conditionally render my acct or login */}
-       {session ?  <Nav.Link><Link href="/account"><a>My Account</a></Link></Nav.Link> : <button onClick={()=> signIn()}>Login</button>}
+       {session ? <button onClick={()=> signOut()}>Sign Out</button>: <button onClick={()=> signIn()}>Sign in</button>}
       </Navbar.Collapse> 
       </Navbar>
   )
