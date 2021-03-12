@@ -1,14 +1,13 @@
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import UserContext from '../components/UserContext';
+import { Provider } from 'next-auth/client';
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState(null);
+  const { session } = pageProps;
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <Provider options={{ site: process.env.SITE }} session={session}>
       <Component {...pageProps} />
-    </UserContext.Provider>
+    </Provider>
   );
 }
 

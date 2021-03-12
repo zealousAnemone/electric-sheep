@@ -2,13 +2,9 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Link from 'next/link';
-import { useContext } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/client';
 
-import UserContext from './UserContext';
-
 const Header = () => {
-  const { user, setUser } = useContext(UserContext);
   const [session, loading] = useSession();
 
   return (
