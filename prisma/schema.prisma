@@ -16,6 +16,7 @@ model dreams {
   moon_phase    String?
   date          DateTime? @db.Date
   title         String?
+  users         users?    @relation(fields: [user_id], references: [id])
 }
 
 model tags {
@@ -31,6 +32,7 @@ model users {
   image          String?
   created_at     DateTime  @default(now()) @db.Timestamptz(6)
   updated_at     DateTime  @default(now()) @db.Timestamptz(6)
+  dreams         dreams[]
 }
 
 model accounts {
