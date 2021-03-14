@@ -4,10 +4,9 @@ import { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import Header from '../components/Header';
 
-const addDream = async (dream, tags) => {
+const addDream = async (dream, tags, userId) => {
   try {
-    const session = await getSession();
-    const body = { dream, tags, userId: session.user.user_id };
+    const body = { dream, tags, userId };
     await fetch(`../api/entries`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -18,10 +17,10 @@ const addDream = async (dream, tags) => {
   }
 };
 
-const Add = () => {
+const Add = ({ session }) => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
-  let userId = 1;
+  let userId = session.user.user_id;
   return (
     <div>
       <Header />
@@ -30,7 +29,7 @@ const Add = () => {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            addDream(dream_content, tags);
+            addDream(dream_content, tags, userId);
           }}
         >
           <Form.Group controlId="dreamContent">
@@ -61,6 +60,16 @@ const Add = () => {
       </Container>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const session = await getSession();
+
+  return {
+    props: {
+      session,
+    },
+  };
 };
 
 export default Add;
