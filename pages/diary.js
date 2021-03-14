@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { useSession } from 'next-auth';
 import Header from '../components/Header';
 
 const Diary = ({ entries }) => {
@@ -22,6 +23,9 @@ export const getStaticProps = async () => {
     where: { user_id: session.user_id },
     select: {
       dream_content: true,
+      tags: true,
+      date: true,
+      title: true,
     },
   });
   return {
