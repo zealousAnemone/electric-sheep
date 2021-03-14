@@ -20,7 +20,8 @@ const addDream = async (dream, tags, userId) => {
 const Add = ({ session }) => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
-  let userId = session.user.user_id;
+  let userId;
+  session ? (userId = session.user.user_id) : (userId = 666);
   return (
     <div>
       <Header />
