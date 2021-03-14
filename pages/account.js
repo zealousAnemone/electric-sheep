@@ -8,7 +8,14 @@ const Account = () => {
       <Header />
       <h1>Account</h1>
       <p>On this page, you will be able to view & change acct info</p>
-      {session && <p>{session.user.email}</p>}
+      <ul>
+        {session && (
+          <>
+            <li>{session.user.email}</li>
+            <li>{session.user.name}</li>
+          </>
+        )}
+      </ul>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { useSession } from 'next-auth';
+// import { useSession } from 'next-auth';
 import Header from '../components/Header';
 
 const Diary = ({ entries }) => {
@@ -7,24 +7,25 @@ const Diary = ({ entries }) => {
     <>
       <Header />
       <h1>Diary</h1>
-      <ul>
-        {entries.map((entry) => (
-          <li>{entry.dream_content}</li>
-        ))}
-      </ul>
+      {entries.map((entry) => (
+        <div>
+          <h3>{entry.title}</h3>
+          <p>{entry.dream_content}</p>
+        </div>
+      ))}
     </>
   );
 };
 
 const prisma = new PrismaClient();
 export const getStaticProps = async () => {
-  const [session, loading] = useSession();
+  // const [session, loading] = useSession();
   const entries = await prisma.dreams.findMany({
     where: { user_id: 1 },
     select: {
       dream_content: true,
       tags: true,
-      date: true,
+      // date: true, (Not serializable. Need to fix this)
       title: true,
     },
   });
