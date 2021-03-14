@@ -7,7 +7,7 @@ import Header from '../components/Header';
 const addDream = async (dream, tags) => {
   try {
     const session = await getSession();
-    const body = { dream, tags, user_id: session.user.user_id };
+    const body = { dream, tags, userId: session.user.user_id };
     await fetch(`../api/entries`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
