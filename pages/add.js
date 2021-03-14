@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import Header from '../components/Header';
 
-const addDream = async (dream, tags, userId) => {
+const addDream = async (dream, tags) => {
   try {
     const session = await getSession();
     const body = { dream, tags, user_id: session.user.user_id };
@@ -22,7 +22,7 @@ const Add = () => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
   let userId = 1;
-  const addDream = (dream, tags, userId) => {
+  const addDream = (dream, tags) => {
     alert('Dream!');
     session && alert('Logged in!');
   };
