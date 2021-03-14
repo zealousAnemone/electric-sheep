@@ -22,10 +22,6 @@ const Add = () => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
   let userId = 1;
-  const addDream = (dream, tags) => {
-    alert('Dream!');
-    session && alert('Logged in!');
-  };
   return (
     <div>
       <Header />
@@ -34,7 +30,7 @@ const Add = () => {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            addDream(dream_content, tags, userId);
+            addDream(dream_content, tags);
           }}
         >
           <Form.Group controlId="dreamContent">
