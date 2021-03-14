@@ -19,12 +19,13 @@ const Add = ({ session }) => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
   let userId;
-  session ? (userId = session.user.user_id) : (userId = 1);
+  session ? (userId = session.user.user_id) : (userId = 0);
   return (
     <div>
       <Header />
       <Container>
         <h1>Add Dream</h1>
+        <h2>Session: {session}</h2>
         <Form
           onSubmit={(e) => {
             e.preventDefault();
