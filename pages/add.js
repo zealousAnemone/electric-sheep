@@ -1,10 +1,13 @@
+import { getSession } from 'next-auth/client';
 import { useState } from 'react';
+// import { getSession } from 'next-auth';
 import { Form, Container, Button } from 'react-bootstrap';
 import Header from '../components/Header';
 
 const addDream = async (dream, tags, userId) => {
   try {
-    const body = { dream, tags, userId };
+    const session = await getSession();
+    const body = { dream, tags, user_id: session.user.user_id };
     await fetch(`../api/entries`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -15,17 +18,19 @@ const addDream = async (dream, tags, userId) => {
   }
 };
 
-const Add = ({ session }) => {
+const Add = () => {
   const [dream_content, setDreamContent] = useState('');
   const [tags, setTags] = useState('');
-  let userId;
-  session ? (userId = session.user.user_id) : (userId = 0);
+  let userId = 1;
+  const addDream = (dream, tags, userId) => {
+    alert('Dream!');
+    session && alert('Logged in!');
+  };
   return (
     <div>
       <Header />
       <Container>
         <h1>Add Dream</h1>
-        <h2>Session: {session}</h2>
         <Form
           onSubmit={(e) => {
             e.preventDefault();
