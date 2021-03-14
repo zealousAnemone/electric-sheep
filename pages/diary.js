@@ -20,7 +20,7 @@ const prisma = new PrismaClient();
 export const getStaticProps = async () => {
   const [session, loading] = useSession();
   const entries = await prisma.dreams.findMany({
-    where: { user_id: session.user_id },
+    where: { user_id: session.user.user_id },
     select: {
       dream_content: true,
       tags: true,
