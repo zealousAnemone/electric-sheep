@@ -17,8 +17,9 @@ const Diary = ({ entries }) => {
 
 const prisma = new PrismaClient();
 export const getStaticProps = async () => {
+  const [session, loading] = useSession();
   const entries = await prisma.dreams.findMany({
-    where: { user_id: 1 },
+    where: { user_id: session.user_id },
     select: {
       dream_content: true,
     },
